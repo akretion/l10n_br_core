@@ -12,6 +12,14 @@ class PartyMixin(models.AbstractModel):
     _name = "l10n_br_base.party.mixin"
     _description = "Brazilian partner and company data mixin"
 
+    vat = fields.Char()  # mixin methods needs the vat field here
+    cnpj_cpf = fields.Char(  # alias for v14 backward compat
+        string="CNPJ/CPF",
+        # (for some reason related="vat" makes numerous tests fail)
+        inverse="_inverse_cnpj_cpf",
+        compute="_compute_cnpj_cpf",
+    )
+
     cnpj_cpf_stripped = fields.Char(
         string="CNPJ/CPF Stripped",
         help="CNPJ/CPF without special characters",
@@ -19,23 +27,6 @@ class PartyMixin(models.AbstractModel):
         store=True,
         index=True,
     )
-
-    vat = fields.Char()
-    cnpj_cpf = fields.Char(
-        string="CNPJ/CPF",
-        inverse="_onchange_cnpj_cpf",
-        compute="_compute_cnpj_cpf",
-    )
-
-    @api.onchange("cnpj_cpf")
-    def _onchange_cnpj_cpf(self):
-        for partner in self:
-            partner.vat = cnpj_cpf.formata(str(self.cnpj_cpf))
-
-    @api.depends("vat")
-    def _compute_cnpj_cpf(self):
-        for partner in self:
-            partner.cnpj_cpf = partner.vat
 
     inscr_est = fields.Char(
         string="State Tax Number",
@@ -84,6 +75,24 @@ class PartyMixin(models.AbstractModel):
     district = fields.Char(
         size=32,
     )
+
+    def _inverse_cnpj_cpf(self):
+        for partner in self:
+            partner.vat = cnpj_cpf.formata(str(self.cnpj_cpf))
+
+    @api.onchange("cnpj_cpf")
+    def _onchange_cnpj_cpf(self):  # TODO, see comment bellow
+        """
+        In the future we should simply put @api.onchange("cnpj_cpf")
+        on _inverse_cnpj_cpf and remove this method. But for now,
+        it's good to maintain backward compat with the v14 codebase with this.
+        """
+        return self._inverse_cnpj_cpf()
+
+    @api.depends("vat")
+    def _compute_cnpj_cpf(self):
+        for partner in self:
+            partner.cnpj_cpf = partner.vat
 
     @api.depends("cnpj_cpf")
     def _compute_cnpj_cpf_stripped(self):
