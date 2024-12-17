@@ -37,6 +37,7 @@ class TestDeliveryInverseAmount(TransactionCase):
 
         # Alteração para permitir do teste
         cls.sale_order_line_id.company_id.delivery_costs = "total"
+        cls.sale_order_line_id.company_id.sale_create_invoice_policy = "sale_order"
         # Change freight, insurance and other costs amount by Total values
         with Form(cls.sale_order_total_id) as so:
             so.amount_freight_value = 100.0
@@ -110,9 +111,11 @@ class TestDeliveryInverseAmount(TransactionCase):
             110.0,
             "Unexpected value for the field amount_price_gross from Sale Order",
         )
+        # No amount_untaxed é esperado o valor total dos produtos + frete, seguro
+        # e outros.
         self.assertEqual(
             self.sale_order_total_id.amount_untaxed,
-            110.0,
+            410.0,
             "Unexpected value for the field amount_untaxed from Sale Order",
         )
         self.assertEqual(
@@ -143,9 +146,11 @@ class TestDeliveryInverseAmount(TransactionCase):
             110.0,
             "Unexpected value for the field amount_price_gross from Sale Order",
         )
+        # No amount_untaxed é esperado o valor total dos produtos + frete, seguro
+        # e outros.
         self.assertEqual(
             self.sale_order_line_id.amount_untaxed,
-            110.0,
+            410.0,
             "Unexpected value for the field amount_untaxed from Sale Order",
         )
         self.assertEqual(
