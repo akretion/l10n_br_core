@@ -180,7 +180,7 @@ class SaleOrderLine(models.Model):
     def _compute_amount(self):
         """Compute the amounts of the SO line."""
         result = super()._compute_amount()
-        for line in self:
+        for line in self.filtered(lambda ln: ln.fiscal_operation_id):
             # Update taxes fields
             line._update_fiscal_taxes()
             # Call mixin compute method
