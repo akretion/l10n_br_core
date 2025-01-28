@@ -15,7 +15,8 @@ class SaleOrder(models.Model):
 
     @api.model
     def _default_fiscal_operation(self):
-        return self.env.company.sale_fiscal_operation_id
+        if self.env.company.country_id.code == "BR":
+            return self.env.company.sale_fiscal_operation_id
 
     @api.model
     def _default_copy_note(self):
