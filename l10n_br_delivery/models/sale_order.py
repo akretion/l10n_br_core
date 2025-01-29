@@ -30,7 +30,11 @@ class SaleOrder(models.Model):
             order.delivery_set = True if order.carrier_id else False
 
     def set_delivery_line(self, carrier, amount):
+        if not self.mapped("fiscal_operation_id"):
+            return super().set_delivery_line(carrier, amount)
+
         # Remove delivery products from the sales order
+        # if Fiscal Operation informed
         self._remove_delivery_line()
 
         for order in self:
