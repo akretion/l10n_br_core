@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Detect unreleased dependencies
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: |
           for reqfile in requirements.txt test-requirements.txt ; do
               if [ -f ${reqfile} ] ; then
@@ -56,7 +56,7 @@ jobs:
     env:
       BRCOBRANCA_API_URL: http://boleto_cnab_api:9292
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - name: Install vcrpy and work around https://github.com/kevin1024/vcrpy/issues/855
