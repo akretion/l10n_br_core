@@ -4,11 +4,17 @@
 
 from odoo.addons.stock_picking_invoicing.tests.common import TestPickingInvoicingCommon
 
+from ..hooks import stock_account_inform_journal_in_fiscal_operation
+
 
 class TestBrPickingInvoicingCommon(TestPickingInvoicingCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+
+        # Load COA Fiscal Operation properties
+        # TODO: Apenas o hook já deveria resolver?
+        stock_account_inform_journal_in_fiscal_operation(cls.cr)
 
     def _change_user_company(self, company):
         self.env.user.company_ids += company
