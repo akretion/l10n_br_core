@@ -87,3 +87,47 @@ def pre_init_hook(cr):
         env = api.Environment(cr, SUPERUSER_ID, {})
         set_stock_warehouse_external_ids(env, "l10n_br_base.empresa_simples_nacional")
         set_stock_warehouse_external_ids(env, "l10n_br_base.empresa_lucro_presumido")
+
+
+def post_init_hook(cr, registry):
+    if not tools.config["without_demo"]:
+        _logger.info(_("Loading l10n_br_stock/demo/res_users_demo.xml ..."))
+        tools.convert_file(
+            cr,
+            "l10n_br_stock",
+            "demo/res_users_demo.xml",
+            None,
+            mode="init",
+            noupdate=True,
+            kind="init",
+        )
+        _logger.info(_("Loading l10n_br_stock/demo/stock_location_demo.xml ..."))
+        tools.convert_file(
+            cr,
+            "l10n_br_stock",
+            "demo/stock_location_demo.xml",
+            None,
+            mode="init",
+            noupdate=True,
+            kind="init",
+        )
+        _logger.info(_("Loading l10n_br_stock/demo/stock_inventory_demo.xml ..."))
+        tools.convert_file(
+            cr,
+            "l10n_br_stock",
+            "demo/stock_inventory_demo.xml",
+            None,
+            mode="init",
+            noupdate=True,
+            kind="init",
+        )
+        _logger.info(_("Loading l10n_br_stock/demo/res_company_demo.xml ..."))
+        tools.convert_file(
+            cr,
+            "l10n_br_stock",
+            "demo/res_company_demo.xml",
+            None,
+            mode="init",
+            noupdate=True,
+            kind="init",
+        )
