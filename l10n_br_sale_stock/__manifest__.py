@@ -16,10 +16,7 @@
         "l10n_br_sale",
         "l10n_br_stock_account",
     ],
-    "demo": [
-        "demo/l10n_br_sale_stock_demo.xml",
-        "demo/sale_order_demo.xml",
-    ],
     "installable": True,
+    "post_init_hook": "post_init_hook",
     "auto_install": True,
 }

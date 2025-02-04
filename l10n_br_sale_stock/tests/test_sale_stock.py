@@ -3,12 +3,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import exceptions
-from odoo.tests import Form, tagged
+from odoo.tests import Form
 
 from odoo.addons.l10n_br_stock_account.tests.common import TestBrPickingInvoicingCommon
 
+from ..hooks import sale_stock_inform_journal_in_fiscal_operation
 
-@tagged("post_install", "-at_install")
+
 class TestSaleStock(TestBrPickingInvoicingCommon):
     @classmethod
     def setUpClass(cls):
@@ -23,6 +24,9 @@ class TestSaleStock(TestBrPickingInvoicingCommon):
         )
         for company in cls.companies:
             company.sale_invoicing_policy = "stock_picking"
+
+        # TODO: O hook deveria funcionar?
+        sale_stock_inform_journal_in_fiscal_operation(cls.cr)
 
     def test_02_sale_stock_return(self):
         """
