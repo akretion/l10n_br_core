@@ -40,10 +40,10 @@ Installation
 
 This module depends on:
 
-- stock_account
-- stock_picking_invoicing
-- l10n_br_stock
-- l10n_br_account
+-  stock_account
+-  stock_picking_invoicing
+-  l10n_br_stock
+-  l10n_br_account
 
 Configuration
 =============
@@ -72,12 +72,12 @@ Changelog
 
 **Bugfixes**
 
-   - Fixes picking creation with kits products.
+   -  Fixes picking creation with kits products.
 
 13.0.1.0.0 (2022-01-19)
 -----------------------
 
-- Module migration.
+-  Module migration.
 
 Bug Tracker
 ===========
@@ -100,13 +100,13 @@ Authors
 Contributors
 ------------
 
-- `Akretion <https://akretion.com/pt-BR>`__:
+-  `Akretion <https://akretion.com/pt-BR>`__:
 
-  - Renato Lima <renato.lima@akretion.com.br>
+   -  Renato Lima <renato.lima@akretion.com.br>
 
-- `Kmee <https://www.kmee.com.br>`__:
+-  `Kmee <https://www.kmee.com.br>`__:
 
-  - Gabriel Cardoso de Faria <gabriel.cardoso@kmee.com.br>
+   -  Gabriel Cardoso de Faria <gabriel.cardoso@kmee.com.br>
 
 Other credits
 -------------
