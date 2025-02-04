@@ -22,11 +22,6 @@
         "reports/purchase_report_views.xml",
         #        "reports/purchase_order_templates.xml",
     ],
-    "demo": [
-        "demo/company.xml",
-        "demo/product.xml",
-        "demo/l10n_br_purchase.xml",
-    ],
     "installable": True,
     "post_init_hook": "post_init_hook",
     "auto_install": False,
