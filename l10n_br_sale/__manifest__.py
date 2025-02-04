@@ -23,12 +23,6 @@
         "report/sale_report_view.xml",
         "report/sale_report_templates.xml",
     ],
-    "demo": [
-        # Demo
-        "demo/product.xml",
-        "demo/company.xml",
-        "demo/l10n_br_sale.xml",
-    ],
     "installable": True,
     "auto_install": True,
     "post_init_hook": "post_init_hook",
