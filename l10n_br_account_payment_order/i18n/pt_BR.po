@@ -876,6 +876,11 @@ msgid "Boleto Wallet Code"
 msgstr ""
 
 #. module: l10n_br_account_payment_order
+#: model:ir.model.fields.selection,name:l10n_br_account_payment_order.selection__l10n_br_cnab_code__code_type__boleto_write_off_devolution
+msgid "Boleto Write Off Devolution"
+msgstr ""
+
+#. module: l10n_br_account_payment_order
 #: model:ir.model.fields,field_description:l10n_br_account_payment_order.field_account_journal__bank_code_bc
 #: model:ir.model.fields,field_description:l10n_br_account_payment_order.field_account_payment_mode__bank_code_bc
 #: model:ir.model.fields,field_description:l10n_br_account_payment_order.field_l10n_br_cnab_config__bank_code_bc
@@ -1111,6 +1116,12 @@ msgstr "Tipo de CNAB"
 #: model:res.groups,name:l10n_br_account_payment_order.group_cnab_user
 msgid "CNAB User"
 msgstr "Usuário CNAB"
+
+#. module: l10n_br_account_payment_order
+#: model:ir.model.fields,help:l10n_br_account_payment_order.field_l10n_br_cnab_boleto_fields__write_off_devolution_code_id
+#: model:ir.model.fields,help:l10n_br_account_payment_order.field_l10n_br_cnab_config__write_off_devolution_code_id
+msgid "CNAB code used for devolution instruction."
+msgstr ""
 
 #. module: l10n_br_account_payment_order
 #: model:ir.model.fields.selection,name:l10n_br_account_payment_order.selection__l10n_br_cnab_boleto_fields__boleto_species__17
@@ -1820,6 +1831,12 @@ msgid "Desconto de pontualidade"
 msgstr ""
 
 #. module: l10n_br_account_payment_order
+#: model:ir.model.fields,field_description:l10n_br_account_payment_order.field_l10n_br_cnab_boleto_fields__write_off_devolution_code_id
+#: model:ir.model.fields,field_description:l10n_br_account_payment_order.field_l10n_br_cnab_config__write_off_devolution_code_id
+msgid "Devolution Instruction Code"
+msgstr ""
+
+#. module: l10n_br_account_payment_order
 #: code:addons/l10n_br_account_payment_order/models/account_payment_mode.py:0
 #: model:ir.model.fields.selection,name:l10n_br_account_payment_order.selection__account_payment_mode__payment_mode_domain__dinheiro
 #, python-format
@@ -2455,6 +2472,12 @@ msgid "Number of Actions"
 msgstr "Número de Ações"
 
 #. module: l10n_br_account_payment_order
+#: model:ir.model.fields,field_description:l10n_br_account_payment_order.field_l10n_br_cnab_boleto_fields__write_off_devolution_number_of_days
+#: model:ir.model.fields,field_description:l10n_br_account_payment_order.field_l10n_br_cnab_config__write_off_devolution_number_of_days
+msgid "Number of Days for Devolution"
+msgstr ""
+
+#. module: l10n_br_account_payment_order
 #: model:ir.model.fields,field_description:l10n_br_account_payment_order.field_account_payment_mode__message_has_error_counter
 #: model:ir.model.fields,field_description:l10n_br_account_payment_order.field_l10n_br_cnab_boleto_fields__message_has_error_counter
 #: model:ir.model.fields,field_description:l10n_br_account_payment_order.field_l10n_br_cnab_code__message_has_error_counter
@@ -2902,6 +2925,12 @@ msgstr ""
 #, python-format
 msgid "Sorry, you are not allowed to delete the attachment."
 msgstr "Desculpe, você não tem permissão para excluir o anexo."
+
+#. module: l10n_br_account_payment_order
+#: model:ir.model.fields,help:l10n_br_account_payment_order.field_l10n_br_cnab_boleto_fields__write_off_devolution_number_of_days
+#: model:ir.model.fields,help:l10n_br_account_payment_order.field_l10n_br_cnab_config__write_off_devolution_number_of_days
+msgid "Specifies the number of days allowed for devolution."
+msgstr ""
 
 #. module: l10n_br_account_payment_order
 #: model:ir.model.fields,help:l10n_br_account_payment_order.field_l10n_br_cnab_return_log__activity_state
