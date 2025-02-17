@@ -4,7 +4,7 @@
 from odoo import SUPERUSER_ID, api
 
 from odoo.addons.l10n_br_fiscal.tools import set_journal_in_fiscal_operation
-from odoo.addons.l10n_br_stock.hooks import create_quants_for_inventory
+from odoo.addons.l10n_br_stock.hooks import create_locations_quants
 
 
 def post_init_hook(cr, registry):
