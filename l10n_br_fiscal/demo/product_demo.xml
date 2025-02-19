@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- pylint:disable=file-not-used -->
 <odoo noupdate="1">
 
     <!-- Service products -->
@@ -494,14 +493,6 @@
 
     <!-- FURN_0097 - Customizable Desk -->
     <record id="product.product_product_4b" model="product.product">
-        <field name="ncm_id" ref="l10n_br_fiscal.ncm_94033000" />
-        <field name="fiscal_genre_id" ref="l10n_br_fiscal.product_genre_94" />
-        <field name="fiscal_type">04</field>
-        <field name="icms_origin">0</field>
-    </record>
-
-    <!-- FURN_0098 - Customizable Desk -->
-    <record id="product.product_product_4c" model="product.product">
         <field name="ncm_id" ref="l10n_br_fiscal.ncm_94033000" />
         <field name="fiscal_genre_id" ref="l10n_br_fiscal.product_genre_94" />
         <field name="fiscal_type">04</field>
