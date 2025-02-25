@@ -69,6 +69,16 @@ class Partner(models.Model):
                 default["vat"] = None
         return super().copy(default)
 
+    def _auto_init(self):
+        self.env["res.partner"]._rec_names_search += [
+            "cnpj_cpf_stripped",
+            "legal_name",
+            "inscr_est",
+            "rg",
+            "inscr_mun",
+        ]
+        return super()._auto_init()
+
     def _commercial_sync_from_company(self):
         """
         Overriden to avoid copying the CNPJ (vat field) to children companies
