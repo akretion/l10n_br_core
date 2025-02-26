@@ -70,13 +70,10 @@ class Partner(models.Model):
         return super().copy(default)
 
     def _auto_init(self):
-        self.env["res.partner"]._rec_names_search += [
-            "cnpj_cpf_stripped",
-            "legal_name",
-            "inscr_est",
-            "rg",
-            "inscr_mun",
-        ]
+        self.env["res.partner"]._rec_names_search.append("cnpj_cpf_stripped")
+        self.env["res.partner"]._rec_names_search.append("legal_name")
+        self.env["res.partner"]._rec_names_search.append("inscr_est")
+        self.env["res.partner"]._rec_names_search.append("rg")
         return super()._auto_init()
 
     def _commercial_sync_from_company(self):
