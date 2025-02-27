@@ -3,3 +3,10 @@ odoo-test-helper  # Needed by spec_driven_model
 pyopenssl==22.1.0
 nfelib<=2.0.7
 xmldiff
+odoo-addon-l10n_br_fiscal @ git+https://github.com/OCA/l10n-brazil.git@refs/pull/3571/head#subdirectory=setup/l10n_br_fiscal
+odoo-addon-l10n_br_stock @ git+https://github.com/OCA/l10n-brazil.git@refs/pull/3571/head#subdirectory=setup/l10n_br_stock
+odoo-addon-l10n_br_sale @ git+https://github.com/OCA/l10n-brazil.git@refs/pull/3571/head#subdirectory=setup/l10n_br_sale
+odoo-addon-l10n_br_sale_stock @ git+https://github.com/OCA/l10n-brazil.git@refs/pull/3571/head#subdirectory=setup/l10n_br_sale_stock
+odoo-addon-l10n_br_stock_account @ git+https://github.com/OCA/l10n-brazil.git@refs/pull/3571/head#subdirectory=setup/l10n_br_stock_account
+odoo-addon-l10n_br_purchase @ git+https://github.com/OCA/l10n-brazil.git@refs/pull/3571/head#subdirectory=setup/l10n_br_purchase
+odoo-addon-l10n_br_delivery @ git+https://github.com/OCA/l10n-brazil.git@refs/pull/3571/head#subdirectory=setup/l10n_br_delivery
